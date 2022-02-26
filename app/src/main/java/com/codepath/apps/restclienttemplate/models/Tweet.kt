@@ -11,6 +11,7 @@ class Tweet {
     var createAt : String = ""
     var user : User? = null
 
+
     companion object{
         fun fromJson(jsonObject: JSONObject) : Tweet{
             val tweet = Tweet()
@@ -20,10 +21,10 @@ class Tweet {
             return tweet
         }
 
-//        fun getFormattedTimestamp(jsonObject: JSONObject) : String? {
-//            val creatAt = jsonObject.getString("created_at")
-//            return TimeFormatter.getTimeDifference(creatAt)
-//        }
+        fun getFormattedTimestamp(timeStamp: String) : String? {
+
+            return TimeFormatter.getTimeDifference(timeStamp)
+        }
 
         fun fromJsonArray(jsonArray: JSONArray) : List<Tweet>{
             val tweets = ArrayList<Tweet>()
