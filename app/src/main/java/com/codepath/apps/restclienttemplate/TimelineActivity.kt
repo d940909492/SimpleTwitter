@@ -1,5 +1,6 @@
 package com.codepath.apps.restclienttemplate
 
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,13 @@ import com.codepath.apps.restclienttemplate.models.Tweet
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import okhttp3.Headers
 import org.json.JSONException
+import androidx.activity.result.ActivityResultCallback
+
+import androidx.activity.result.contract.ActivityResultContracts
+
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
+
 
 class TimelineActivity : AppCompatActivity() {
 
@@ -64,7 +72,8 @@ class TimelineActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.composeItem){
             val intent = Intent(this, ComposeActivity::class.java)
-            startActivityForResult(intent,REQUEST_CODE)
+            startActivityForResult(intent, REQUEST_CODE)
+
         }
         return super.onOptionsItemSelected(item)
     }
@@ -80,6 +89,7 @@ class TimelineActivity : AppCompatActivity() {
         }
 
         super.onActivityResult(requestCode, resultCode, data)
+
     }
 
     fun populateHomeTimeLine(){
