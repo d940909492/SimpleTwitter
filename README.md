@@ -35,9 +35,6 @@ The following **additional** features are implemented:
 
 <img src='walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-## Notes
-
-Describe any challenges encountered while building the app.
 
 ## Open-source libraries used
 
